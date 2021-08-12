@@ -15,16 +15,16 @@ MySQL  localhost:33060+ ssl  SQL >use bikedb;
 
 MySQL  localhost:33060+ ssl  bikedb  SQL >CREATE TABLE bike (Id int(11) not null auto_increment,Name varchar(256) not null,Status varchar(256) default null,Company int(11) not null,primary key(Id));
 
-MySQL  localhost:33060+ ssl  bikedb  SQL >INSERT INTO bike VALUES(1,'HAYABUSA','ACTIVE',1),(2,'NINJA H2R','ACTIVE',2),(3,'MONSTER','ACTIVE',3);
+MySQL  localhost:33060+ ssl  bikedb  SQL >INSERT INTO bike VALUES(1,'KTM Rc 390','ACTIVE',1),(2,'NINJA H2R','ACTIVE',2),(3,'HAYABUSA','ACTIVE',3);
 
 
 MySQL  localhost:33060+ ssl  bikedb  SQL >CREATE TABLE company(Id int(11) not null auto_increment,Nmae varchar(256) not null,Found int(11) not null,primary key(Id));
 
-MySQL  localhost:33060+ ssl  bikedb  SQL >INSERT INTO company VALUES(1,'suzuki',2021),(2,'KAWASAKI NINJA ',2021),(3,'DUGATI',2021);
+MySQL  localhost:33060+ ssl  bikedb  SQL >INSERT INTO company VALUES(1,'KTM',2020),(2,'KAWASAKI NINJA ',2021),(3,'suzuki',2021);
 
 MySQL  localhost:33060+ ssl  bikedb  SQL >create table country(Id int(11) not null auto_increment,Country varchar(256) not null,primary key(Id));
 
-MySQL  localhost:33060+ ssl  bikedb  SQL >INSERT INTO country VALUES(1,'Japan'),(2,'Japan'),(3,'Italian');
+MySQL  localhost:33060+ ssl  bikedb  SQL >INSERT INTO country VALUES(1,'Austria'),(2,'Japan'),(3,'Japan');
 
 MySQL  localhost:33060+ ssl  bikedb  SQL > SELECT bike.Id,company.Name,company.Found,country.Country from bike INNER JOIN company USING(Id) INNER JOIN country USING(Id) ORDER BY Id;
 
